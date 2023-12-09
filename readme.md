@@ -3,7 +3,7 @@
 ## Running tests and code profiling
 
 ### Tests
-`pytest -v -rA`
+`pytest -vv -rA`
 
 ### Line profiler
 `kernprof -l -v main.py`
