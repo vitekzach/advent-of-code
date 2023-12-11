@@ -27,6 +27,8 @@ class Table:
         cards = [Card(line) for line in self.table]
         self.cards = {card.card_number: card for card in cards}
         self.__calculate_pile_worth__()
+        self.__calculate_card_copies_owned__()
+        self.__calculate_overall_copies_owned__()
 
     @staticmethod
     def __read__input__(path: str) -> list[str]:
@@ -45,6 +47,18 @@ class Table:
 
         self.pile_worth = worth
 
+    def __calculate_card_copies_owned__(self) -> None:
+        for card_number, card in self.cards.items():
+            for winning_copy in card.wins_copies:
+                self.cards[winning_copy].copies_owned += card.copies_owned
+
+    def __calculate_overall_copies_owned__(self) -> None:
+        cards = 0
+        for card in self.cards.values():
+            cards += card.copies_owned
+
+        self.overall_copies_owned = cards
+
 
 class Card:
     def __init__(self, card_line: str) -> None:
@@ -52,6 +66,8 @@ class Card:
         self.__parse_card_line__(card_line)
         self.__parse_winning_numbers__()
         self.__parse_card_value__()
+        self.__parse_winning_copies__()
+        self.copies_owned = 1
 
     def __parse_card_line__(self, card_line: str) -> None:
         match_numbers = re.search(CARD_REGEX, card_line)
@@ -70,3 +86,7 @@ class Card:
             self.card_points = 0
         else:
             self.card_points = 2 ** (len(self.winning_numbers) - 1)
+
+    def __parse_winning_copies__(self) -> None:
+        indexes_to_add = list(range(1, len(self.winning_numbers) + 1))
+        self.wins_copies = tuple([self.card_number + x for x in indexes_to_add])
