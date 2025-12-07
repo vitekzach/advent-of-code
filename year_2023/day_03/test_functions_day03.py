@@ -1,13 +1,13 @@
-from functions import (
-    get_symbol_and_borders_from_line,
+from year_2023.day_03.functions import (
     generate_number_potential_neighbours,
-    symbol_in_number_neighbours,
+    get_gear_adjacent_numbers,
+    get_gear_adjacent_numbers_from_line,
+    get_gear_ratios,
+    get_symbol_and_borders_from_line,
+    get_viable_gears,
     get_viable_part_numbers,
     get_viable_part_numbers_sum,
-    get_gear_adjacent_numbers_from_line,
-    get_gear_adjacent_numbers,
-    get_viable_gears,
-    get_gear_ratios,
+    symbol_in_number_neighbours,
 )
 
 

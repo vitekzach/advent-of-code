@@ -1,10 +1,10 @@
-from functions import (
-    parse_line,
+from year_2023.day_02.functions import (
     game_possible,
-    possible_game_sum,
     minimal_amounts_for_possible_game,
     minimal_amounts_game_power,
     minimal_power_game_sum,
+    parse_line,
+    possible_game_sum,
 )
 
 

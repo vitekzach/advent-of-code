@@ -1,12 +1,12 @@
-from functions import (
-    get_first_digit,
-    get_last_digit,
-    get_first_and_last_digit,
+from year_2023.day_01.functions import (
     get_final_sum,
-    get_first_digit_crawl,
-    get_last_digit_crawl,
-    get_first_and_last_digit_crawl,
     get_final_sum_crawl,
+    get_first_and_last_digit,
+    get_first_and_last_digit_crawl,
+    get_first_digit,
+    get_first_digit_crawl,
+    get_last_digit,
+    get_last_digit_crawl,
     replace_spelled_digits,
 )
 
