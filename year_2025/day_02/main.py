@@ -1,4 +1,4 @@
-from functions import IdInvalidator
+from year_2025.day_02.functions import IdInvalidator
 
 id_invalidator = IdInvalidator()
 

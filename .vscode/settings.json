@@ -1,0 +1,7 @@
+{
+  "python.analysis.extraPaths": ["./"],
+  "python.autoComplete.extraPaths": ["./"],
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}"
+  }
+}

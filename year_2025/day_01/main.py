@@ -1,4 +1,4 @@
-from functions import Dial
+from year_2025.day_01.functions import Dial
 
 with open("year_2025/day_01/input.txt", "r") as file:
     instructions = file.read().splitlines()
